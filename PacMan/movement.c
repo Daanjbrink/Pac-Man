@@ -12,19 +12,19 @@ char collision(struct Object character, char direction)
 	if((character.x % 32) == 0 && (character.y % 32) == 0){
 		unsigned char x = character.x/32, y = character.y/32;
 		switch(direction){
-			case 1: // Left
+			case LEFT:
 				if(field[x-1][y] != 0)
 					return 1;
 				break;
-			case 2: // Up
+			case UP:
 				if(field[x][y-1] != 0)
 					return 1;
 				break;
-			case 3: // Right
+			case RIGHT:
 				if(field[x+1][y] != 0)
 					return 1;
 				break;
-			case 4: // Down
+			case DOWN:
 				if(field[x][y+1] != 0)
 					return 1;
 				break;
@@ -35,19 +35,19 @@ char collision(struct Object character, char direction)
 	if(character.type == PACMAN){
 		for(int i = 0; i != sizeof(ghost)/sizeof(struct Object); i++){
 			switch(direction){
-				case 1: // Left
+				case LEFT:
 					if(ghost[i].x == pacman.x-1 && ghost[i].y == pacman.y)
 						return 1;
 					break;
-				case 2: // Up
+				case UP:
 					if(ghost[i].x == pacman.x && ghost[i].y == pacman.y-1)
 						return 1;
 					break;
-				case 3: // Right
+				case RIGHT:
 					if(ghost[i].x == pacman.x+1 && ghost[i].y == pacman.y)
 						return 1;
 					break;
-				case 4: // Down
+				case DOWN:
 					if(ghost[i].x == pacman.x && ghost[i].y == pacman.y+1)
 						return 1;
 					break;

@@ -8,8 +8,8 @@
 // Define directions
 #define LEFT 1
 #define UP 2
-#define RIGHT 3
-#define DOWN 4
+#define RIGHT 4
+#define DOWN 8
 
 // Define object types
 #define PACMAN 1
@@ -23,7 +23,7 @@ struct Object {
 	char type; // 0 = pacman; 1 = ghost;
 };
 
-char field[xtiles][ytiles]; // Init game field; 0 = nothing, 1 = pacman, 2 = ghost, 3 = wall
+char field[xtiles][ytiles]; // Game field; 0 = nothing, 1 = pacman, 2 = ghost, 3 = wall
 struct Object pacman; // Init pacman object
 struct Object ghost[4];
 

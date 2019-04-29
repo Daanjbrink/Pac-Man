@@ -10,9 +10,9 @@ unsigned long prev = 0;
 void gameloop()
 {
 	// If the loop is done before the end of the frame, wait the remaining time
-	unsigned long timediff = millis()-prev;
+	unsigned int timediff = millis()-prev;
 	if(timediff < frametime){
-		//_delay_ms(timediff);
+		_delay_ms(timediff);
 	}
 	prev = millis();
 }
